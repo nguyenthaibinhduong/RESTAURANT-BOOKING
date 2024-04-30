@@ -70,8 +70,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                 </ul>
                             </li>
                         -->
-                            <li class="scroll-to-section"><a href="#menu">Menu</a></li>
-                            <li class="scroll-to-section"><a href="#chefs">Chefs</a></li> 
+                            
                             <li class="submenu">
                                 <a href="javascript:;">Features</a>
                                 <ul>
@@ -83,6 +82,27 @@ https://templatemo.com/tm-558-klassy-cafe
                             </li>
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
+                            @if (Route::has('login'))
+                                @auth
+                                    <li class="scroll-to-section">
+                                        <x-app-layout></x-app-layout>
+                                    </li>
+                                @else
+                                    <li class="scroll-to-section"><a
+                                        href="{{ route('login') }}"
+                                    >
+                                        Đăng nhập
+                                    </a></li>
+
+                                    @if (Route::has('register'))
+                                        <li class="scroll-to-section"><a
+                                            href="{{ route('register') }}"
+                                        >
+                                            Tạo tài khoản
+                                        </a></li>
+                                    @endif
+                                @endauth
+                        @endif
                         </ul>        
                         <a class='menu-trigger'>
                             <span>Menu</span>
