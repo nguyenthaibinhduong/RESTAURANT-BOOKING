@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/redirects',[HomeController::class,'redirects'])->name('home');
 
 Route::middleware([
     'auth:sanctum',
