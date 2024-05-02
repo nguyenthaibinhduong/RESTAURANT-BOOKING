@@ -9,7 +9,7 @@
 
             </div>
 
-            <div class="">
+            <div class="py-3">
                 <!-- Teams Dropdown -->
                 @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
                     <div class="ms-3 relative">
